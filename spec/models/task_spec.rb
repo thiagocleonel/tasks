@@ -24,5 +24,5 @@ RSpec.describe Task, type: :model do
       expect(@task.status).to eq(1)
     end
   end
-  
+
 end
