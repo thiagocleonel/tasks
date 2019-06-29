@@ -6,14 +6,20 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
+      <% if user_signed_in? %>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+      <% end %>
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Sair <span class="sr-only">(current)</span></a>
+          <% if user_signed_in? %>
+            <%= link_to "Sair", destroy_user_session_path(),class:"nav-link", method: :delete  %>
+          <% else %>
+            <%= link_to "Cadastrar-se", new_user_registration_path,class:"nav-link" %>
+          <% end %>
         </li>
       </ul>
     </form>
