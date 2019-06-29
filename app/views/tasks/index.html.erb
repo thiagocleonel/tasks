@@ -12,9 +12,8 @@
       <tr>
         <td><%= task.title %></td>
         <td><%= task.description %></td>
-        <td><%= task.created_at %></td>
-        <!-- <td><%#= task.delivery %></td> -->
-        <td><%= I18n.t(:hello) %></td>
+        <td><%= is_date(task.created_at) %></td>
+        <td><%= is_date(task.delivery) %></td>
       </tr>
       <% end %>
     </tbody>
