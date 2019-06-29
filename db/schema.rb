@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2019_06_29_004918) do
     t.string "title"
     t.text "description"
     t.datetime "delivery"
-    t.integer "status"
+    t.integer "status", default: 0
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
