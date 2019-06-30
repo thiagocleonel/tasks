@@ -1,3 +1,4 @@
+
 <table class="table">
     <thead>
       <tr>
@@ -5,6 +6,10 @@
         <th scope="col">Descrição</th>
         <th scope="col">Data de Criação</th>
         <th scope="col">Data de Entrega</th>
+        <th scope="col">
+          <%= link_to 'Criar', new_task_path,class:"btn btn-success" %>
+        </th>
+        <th scope="col">  </th>
       </tr>
     </thead>
     <tbody>
@@ -14,6 +19,17 @@
         <td><%= task.description %></td>
         <td><%= is_date(task.created_at) %></td>
         <td><%= is_date(task.delivery) %></td>
+        <td>
+          <%= link_to task_path(task), class:"btn btn-primary" do%>
+              <span class="" aria-hidden="true">Exibir</span>
+          <% end %>
+            <%= link_to edit_task_path(task), class:"btn btn-warning" do%>
+                <span class="" aria-hidden="true">Editar</span>
+            <% end %>
+          <%= link_to task_path(task), method: :delete, data: { confirm: "Tem certeza que deseja excluir esta tarefa ?" }, class:"btn btn-danger" do%>
+              <span class="" aria-hidden="true">Remover</span>
+          <% end %>
+        </td>
       </tr>
       <% end %>
     </tbody>

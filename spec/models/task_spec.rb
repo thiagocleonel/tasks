@@ -14,14 +14,14 @@ RSpec.describe Task, type: :model do
 
   context "Default values:" do
     it "check default value" do
-      expect(@task.status).to eq(0)
+      expect(@task.status).to eq(1)
     end
   end
 
   context "Methods:" do
     it "check method remove" do
       @task.remove
-      expect(@task.status).to eq(1)
+      expect(@task.status).to eq(0)
     end
   end
 
