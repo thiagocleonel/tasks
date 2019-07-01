@@ -4,23 +4,22 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   host: localhost
   user: postgres
+  password: postgres
 
 
 development:
   <<: *default
-  database: MyTasks_development
+  database: mytasks_development
 
 
 test:
   <<: *default
-  database: MyTasks_test
+  database: mytasks_test
 
 
 production:
   <<: *default
-  database: MyTasks_production
-  username: OneBitExchange
-  password: <%= ENV['EXCHANGE_DATABASE_PASSWORD'] %>
+  database: mytasks_development
 
 # # PostgreSQL. Versions 9.1 and up are supported.
 # #
