@@ -15,5 +15,5 @@
 //= require activestorage
 //= require turbolinks
 //= require tether/dist/js/tether
-//= require bootstrap/dist/js/bootstrap.bundle
+//= require bootstrap
 //= require_tree .
